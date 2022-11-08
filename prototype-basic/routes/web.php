@@ -54,8 +54,6 @@ Route::get('/addapprenants/{id}', [ApprenantsController::class , 'addapprenants'
 
 Route::get('/insertapprenants', [ApprenantsController::class ,'insertapprenants']);
 
-Route::get('/delete_apprenants', [ ApprenantsController::class,'delete' ]);
-
 Route::get('/deleteapprenants', [ ApprenantsController::class,'deleteapprenants' ]);
 
 Route::get('searchapprenants/{id}/{name}',[PromotionController::class,'searchapprenants']);
@@ -78,23 +76,24 @@ Route::get('/addbrief', [BriefsController::class , 'add' ]);
 
 Route::get('/add_brief', [BriefsController::class ,'insert']);
 
-
 Route::get('/update_brief/{id}', [BriefsController::class,'update_brief']);
 
 Route::get('/edit_brief/{id}', [BriefsController::class,'edit_brief']);
-
 
 Route::get('/delete', [BriefsController::class,'delete']);
 
 
 // taches routes
 
-Route::get('/create_taches/{id}', [tachesController::class,'create_taches']);
-
+Route::get('/taches/{id}', [tachesController::class,'create_taches']);
 
 Route::get('/addtaches', [tachesController::class,'addtaches']);
 
+Route::get('/taches/delete/{id_task}',[tachesController::class,'delete']);
 
+Route::get('/update_taches/{id}',[tachesController::class,'update_taches']);
+
+Route::get('/taches/{id}/edit_tache/{id_task}',[tachesController::class,'edit_tache']);
 
 
 

@@ -124,7 +124,7 @@ button{
                     <td>{{ $row->email }}</td>
                      <td>
                         <a class="btn btn-primary" href="/update_apprenants/{{ $row->id_app }}">Modifier </a> 
-                        <a  class="btn btn-danger" href="/deleteapprenants?id={{ $row->id_app }}">/Supprimer </a> 
+                        <a  class="btn btn-danger" href="/deleteapprenants?id={{ $row->id_app }}">Supprimer </a> 
                     </td> 
                 </tr>
                 <input type="hidden" id="idsearch" value="{{ $row->id_promo }}">

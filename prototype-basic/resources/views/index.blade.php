@@ -69,10 +69,10 @@ tr:nth-child(even) {
 </style>
 
 <ul>
-    <li><a href="/add" style="margin-left:100px;margin-top:2px;" class="a">Ajouter Promotion </a></li>
+    <li><a href="/add" style="margin-top:2px;" class="a">Ajouter Promotion </a></li>
     <li><a href="/briefs" style="margin-top:2px;" class="a">Briefs</a></li>
     
-    <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:500px;margin-top:13px;"> </li>
+    <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:550px;margin-top:13px;"> </li>
   </ul>
 
 

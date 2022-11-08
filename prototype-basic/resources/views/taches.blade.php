@@ -91,7 +91,7 @@ button{
 </style>
 
 <ul>
-    <li><a href="/index" style="margin-left:200px;margin-top:2px;" class="a">Accueil</a></li>
+    <li><a href="/index" style="margin-top:2px;" class="a">Accueil</a></li>
     <li><a href="/briefs" style="margin-top:2px;" class="a">Briefs</a></li>
    {{-- <li style="margin-left:10px;"><a href="{{ URL('addapprenants/' . $promotion[0]->id) }} ">Ajouter un apprenant</a></li> --}}
 
@@ -108,7 +108,7 @@ button{
     <input type="hidden" name="id_brief" placeholder="Description" value="{{$id }}">
 
     
-    <button>Confirmer</button>
+    <button type="submit">Confirmer</button>
 
 </form>
 
@@ -125,8 +125,7 @@ button{
         <th>Actions</th>
     </thead>
     <tbody>
-        {{-- @if ($data[0]->id_app !=null) --}}
-
+        @if ($data[0]->id !=null)
             @foreach ($data as $row)
                 <tr>
                     <td>{{ $row->title }}</td>
@@ -134,15 +133,14 @@ button{
                     <td>{{ $row->enddate }}</td>
                     <td>{{ $row->description }}</td>
                      <td>
-                        <a class="btn btn-primary" href="/update_apprenants/{{ $row->id_app }}">Modifier </a> 
-                        <a  class="btn btn-danger" href="/deleteapprenants?id={{ $row->id_app }}">/Supprimer </a> 
+                        <a class="btn btn-primary" href="/update_taches/{{ $row->id }}">Modifier </a> 
+                        <a  class="btn btn-danger" href="delete/{{ $row->id }}">Supprimer </a> 
                     </td> 
                 </tr>
             @endforeach
+
+            @endif
     </tbody>
-
-   
-
 </table>
 
 

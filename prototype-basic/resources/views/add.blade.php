@@ -63,7 +63,7 @@ button{background-color: #555555;
 <body>
 
     <ul>
-        <li><a href="/index " style="margin-left:100px;margin-top:2px;" class="a">Page précedentes</a></li>
+        <li><a href="/index " style="margin-top:2px;" class="a">Page précedentes</a></li>
         {{-- <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:500px;margin-top:13px;"> </li> --}}
       </ul>
 

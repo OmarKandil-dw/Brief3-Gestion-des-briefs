@@ -45,7 +45,7 @@ li a:hover {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 90%;
 }
 
 td, th {
@@ -67,13 +67,13 @@ a{
 }
 .data{
     margin-top: 100px;
-    margin-left: 250px;
+    margin-left: 130px;
     }
 
 </style>
 
 <ul>
-    <li><a href="/index" style="margin-left:100px;margin-top:2px;" class="a">Accueil </a></li>
+    <li><a href="/index" style="margin-top:2px;" class="a">Accueil </a></li>
     <li><a href="/addbrief" style="margin-top:2px;" class="a">Ajouter Brief</a></li>
     <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:500px;margin-top:13px;"> </li>
   </ul>
@@ -88,6 +88,8 @@ a{
                     <th>Id Brief </th>
                     <th> Nom  </th>
                     <th> Description </th>                    
+                    <th> Date de livraison </th>                    
+                    <th> Date de récuperation </th>                    
                     <th> Actions </th>
                 </tr>
                 @foreach ($data as $row)
@@ -96,11 +98,13 @@ a{
                     <td>{{ $row->id }} </td>
                     <td>{{ $row->name }}</td>
                     <td>{{ $row->description }}</td>
+                    <td>{{ $row->date_de_livraison }}</td>
+                    <td>{{ $row->date_de_récuperation }}</td>
                     <td> 
-                        <a class="btn btn-primary" href="/update_brief/{{ $row->id }}" > Modifier </a>
-                        <a class="btn btn-success" href="/create_taches/{{ $row->id }}"> Tâches </a> 
-                        <a class="btn btn-info" href="/update_brief/{{ $row->id }}"> Assigner </a> 
-                        <a class="btn btn-danger"href="/delete?id={{ $row->id }}">  Supprimer </a> 
+                        <a class="btn btn-primary" href="/update_brief/{{ $row->id }}">Modifier </a>
+                        <a class="btn btn-success" href="/taches/{{ $row->id }}">Tâches </a> 
+                        <a class="btn btn-info" href="/update_brief/{{ $row->id }}">Assigner </a> 
+                        <a class="btn btn-danger"href="/delete?id={{ $row->id }}"> Supprimer </a> 
                     </td>
                 </tr>
                 @endforeach

@@ -49,11 +49,13 @@ li a:hover {
 }
 
 button{
-    width:30%;
+    width:50%;
     height:100%;
     border: 3px outset black;
     background-color: black;    
     color: white;
+    margin-left:70px;
+
   }
 
 @media  (max-width: 800px) {
@@ -80,11 +82,12 @@ button{
     font-size: 20px;
   }
   button{
-    width:30%;
+    width:60%;
     height:100%;
     border: 3px outset black;
     background-color: black;    
     color: white;
+    margin-left:0px;
   }
 }
 form{
@@ -101,23 +104,20 @@ form{
   height: 40%;
   width: 70%;
   position: static;
-  margin-top:150px; 
+  margin-top:90px; 
   
 
 }.inp{
     text-align: center; 
-
-
 }
+
 form{
     padding-left: 100px;
-
 }
 a:hover{
     text-decoration: none;
     color: white;
 }
-
 }
   /* Black */
 
@@ -127,20 +127,41 @@ a:hover{
 <body>
 
     <ul>
-        <li><a href="/index" style="margin-top:2px;" class="a">Accueil</a></li>
+        <li><a href="/briefs" style="margin-left:100px;margin-top:2px;" class="a">Page précedente</a></li>
         {{-- <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:500px;margin-top:13px;"> </li> --}}
       </ul>
 
       <div class="myDiv"><br>
-     <h2>Ajouter un apprenant</h2> <br>
-    <form action="/insertapprenants" method="get">
-          <div class="col-sm-10" id="inp">
-            <input type="text" class="form-control" name="nameapprenants" id="" placeholder="Nom ">   <br>      
-            <input type="text" class="form-control" name="emailapprenants" id="" placeholder="Email">  <br>
-            <input type="hidden" name="promoapprenants" value="{{ $id }}">
-    
-          <div class="col-sm-10">
-            <button type="submit" style="margin-left:20px;margin-bottom:10px; border-radius:5px;">Ajouter</button>
+     <h2>Modifier Taches </h2> <br>
+     <form action="/taches/{{ $taches[0]->id_brief }}/edit_tache/{{  $taches[0]->id  }}" method="get">
+        <div class="col-sm-10 " id="">
+            <div class="row">     
+                <label for=""> Nom :</label>    
+                <input type="text" class="form-control" name="title" value="{{ $taches[0]->title }}"> <br>
+            </div>
+
+            <div class="row">     
+                <label for=""> Description:</label>    
+                <input type="text" class="form-control" name="description" value="{{ $taches[0]->description }}"> <br>
+            </div>
+
+            <div class="row ml-4 pt-2 ">     
+                <div>
+                    <label for=""> Date de début</label>    
+                    <input type="date" class="form-control" name="startdate" value="{{ $taches[0]->startdate}}">
+            </div>
+            
+            <div class="mx-auto">
+                <label for=""> Date de fin</label>    
+                <input type="date" class="form-control" name="enddate" value="{{ $taches[0]->enddate }}">
+             </div>
+
+            </div>
+
+            <input type="hidden" class="form-control"  name="id_tache" value="{{ $taches[0]->id }}">
+
+          <div class="col-sm-10 pt-4">
+            <button type="submit" style="margin-bottom:10px; border-radius:5px;">Sauvegarder</button>
         </div>
       </form>
     </div>
@@ -154,54 +175,3 @@ a:hover{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- 
-
-<form action="/insertapprenants" method="get">
-    <input type="text" name="nameapprenants" id="" placeholder="name">
-    <input type="text" name="emailapprenants" id="" placeholder="email">
-    <button>Ajouter</button>
-</form>
-
-
-
-
-<div>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>PromotionID</th>
-            <th>Actions</th>
-        </tr>
-        @foreach ($selectapprenants as $rowappr)
-
-        <tr>
-        <td> {{ $rowappr->id }}  </td>
-        <td>{{ $rowappr->name }}</td>
-        <td> {{ $rowappr->email }}</td> 
-        <td> {{ $rowappr->id_promo }}</td> 
-
-        <th><a href="/delete?id={{ $rowappr->id }}">Delete</a> </th>
-        <th><a href="/update_apprenants/{{ $rowappr->id }}">/ Edit </a></th>
-    </tr>
-    @endforeach
-</table>
-</div> --}}
