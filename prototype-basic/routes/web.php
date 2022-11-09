@@ -89,12 +89,11 @@ Route::get('/taches/{id}', [tachesController::class,'create_taches']);
 
 Route::get('/addtaches', [tachesController::class,'addtaches']);
 
-Route::get('/taches/delete/{id_task}',[tachesController::class,'delete']);
+Route::get('/taches/{id}/delete/{id_task}',[tachesController::class,'delete']);
 
 Route::get('/update_taches/{id}',[tachesController::class,'update_taches']);
 
 Route::get('/taches/{id}/edit_tache/{id_task}',[tachesController::class,'edit_tache']);
-
 
 
 

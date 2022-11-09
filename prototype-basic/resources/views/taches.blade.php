@@ -73,6 +73,7 @@ form,h6{
 
 table{
     margin-left:20px ;
+    margin-bottom:60px ;
 
     
 }
@@ -93,24 +94,36 @@ button{
 <ul>
     <li><a href="/index" style="margin-top:2px;" class="a">Accueil</a></li>
     <li><a href="/briefs" style="margin-top:2px;" class="a">Briefs</a></li>
-   {{-- <li style="margin-left:10px;"><a href="{{ URL('addapprenants/' . $promotion[0]->id) }} ">Ajouter un apprenant</a></li> --}}
-
-    <li></li>
-    
+   {{-- <li style="margin-left:10px;"><a href="{{ URL('addapprenants/' . $promotion[0]->id) }} ">Ajouter un apprenant</a></li> --}}    
   </ul>
 
-<form action="/addtaches" method="get">
 
-    <input type="text" name="title" placeholder="Nom" value="">
-    <input type="date" name="startdate" placeholder="Date début" value="">
-    <input type="date" name="enddate" placeholder="Date fin " value="">
-    <input type="text" name="description" placeholder="Description" value="">
+<form action="/addtaches" method="get" class="">
+ <i><u> <h4 class="text-center mb-3">Ajouter Nouveau taches</h4></i></u>
+
+  <div class="row" style="width:100%;">
+    <div class="col-sm-3">
+      <label for="staticEmail2" class="visually-hidden">Nom </label>
+      <input type="text" class="form-control" name="title" placeholder="Nom" value="">
+    </div>
+    <div class="col-sm-3">
+      <label for="inputPassword2" class="visually-hidden">Date début</label>
+      <input type="date" class="form-control" name="startdate" placeholder="Nom" value="">
+    </div>
+    <div class="col-sm-3">
+      <label for="inputPassword2" class="visually-hidden">Date fin </label>
+      <input type="date" class="form-control" name="enddate" placeholder="Nom" value="">
+    </div>
+    <div class="col-sm-3">
+      <label for="staticEmail2" class="visually-hidden">Description</label>
+      <input type="text" class="form-control" name="description" placeholder="Description" value="">
+    </div>
     <input type="hidden" name="id_brief" placeholder="Description" value="{{$id }}">
-
-    
-    <button type="submit">Confirmer</button>
-
-</form>
+  </div>
+      <div class="text-center mt-3">
+      <button type="submit" class="btn btn mt-2  ">Confirmer </button>
+    </div>
+  </form>
 
 
 <h6>Liste des taches : </h6>
@@ -134,7 +147,7 @@ button{
                     <td>{{ $row->description }}</td>
                      <td>
                         <a class="btn btn-primary" href="/update_taches/{{ $row->id }}">Modifier </a> 
-                        <a  class="btn btn-danger" href="delete/{{ $row->id }}">Supprimer </a> 
+                        <a class="btn btn-danger" href="{{ $id }}/delete/{{ $row->id }}">Supprimer </a> 
                     </td> 
                 </tr>
             @endforeach

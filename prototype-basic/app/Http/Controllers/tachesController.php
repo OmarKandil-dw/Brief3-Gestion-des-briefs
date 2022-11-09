@@ -37,6 +37,7 @@ class tachesController extends Controller
         return redirect('taches/'.$query[0]->id);
     }
 
+    
     public function update_taches($id){
         $edit = new taches();
         $taches = $edit::where('id',$id)->get();
