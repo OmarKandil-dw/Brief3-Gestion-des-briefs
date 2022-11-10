@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        body{   
+body{   
             background: white;
             margin: 0;
-        }
- ul {
+}
+
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -45,6 +46,7 @@ li a:hover {
   top: 40%;
   left: 37%;
 }
+
 button{background-color: #555555;
  color: white;
  width:20%;
@@ -52,18 +54,17 @@ button{background-color: #555555;
 }
   /* Black */
 
-  input{
+input{
     width:60%;
     height: 20px;
-  }
+}
 
-        
-    </style>
+</style>
 </head>
 <body>
 
     <ul>
-        <li><a href="/index " style="margin-top:2px;" class="a">Accueil</a></li>
+        <li><a href="/index " style="margin-top:2px;" >Accueil</a></li>
         {{-- <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:500px;margin-top:13px;"> </li> --}}
       </ul>
 

@@ -90,6 +90,7 @@ a{
                     
                     <th> Nom  </th>        
                     <th> Email  </th>        
+                    <th> Promotion  </th>        
                     <th> Actions </th>
                 </tr>
                 @foreach ($apprenants as $row)
@@ -97,8 +98,10 @@ a{
                 <tr>
                     <td>{{ $row->name }} </td>
                     <td>{{ $row->email }}</td>
+                    <td>{{ $row->id_promo }} </td>
+
                     <td> 
-                    <a class="btn btn-info" href="{{ $id }}/assignerAuApprenant/{{ $row->id }}">Assigner </a>
+                    <a class="btn btn-primary" href="{{ $id }}/assignerAuApprenant/{{ $row->id }}">Assigner </a>
                     <a class="btn btn-danger" href="{{ $id }}/desassignerAuApprenant/{{ $row->id }}">Desasigner </a>
 
 {{-- 
