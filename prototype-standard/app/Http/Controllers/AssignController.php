@@ -15,6 +15,7 @@ class AssignController extends Controller
         return view('briefsassignement', compact('apprenants','id'));
     }
 
+    
     public function AssignBrief($id,$id_apprenant){
         $apprennants = Apprenants::where('id',$id_apprenant)->first();
         $apprennants->brief()->attach($id);

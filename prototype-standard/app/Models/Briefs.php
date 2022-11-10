@@ -11,6 +11,11 @@ class Briefs extends Model
     public function task(){
         return $this->hasMany(taches::class,'id_brief','id');
     }
+
+
+
+
+    
     public function apprenant(){
         return $this->belongsToMany(Apprenants::class);
 
