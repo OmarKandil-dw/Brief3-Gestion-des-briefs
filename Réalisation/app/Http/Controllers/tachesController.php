@@ -17,6 +17,8 @@ class tachesController extends Controller
         return view('taches' , compact('data','id'));
     }
 
+
+
     public function addtaches(Request $request){
         $addtache = new taches();
         $addtache->title = $request->title;
@@ -28,12 +30,14 @@ class tachesController extends Controller
         return redirect('taches/'.$request->id_brief);
     }
     
+
     public function delete($id,$id_task){
         $query = Briefs::where("id",$id)->get() ;
         taches::where('id',$id_task)->delete();
         return redirect('taches/'.$query[0]->id);
     }
 
+    
     public function update_taches($id){
         $edit = new taches();
         $taches = $edit::where('id',$id)->get();

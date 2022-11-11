@@ -9,12 +9,10 @@ use Illuminate\Http\Request;
 class AssignController extends Controller
 {
     //
-
     public  function index($id){
         $apprenants = Apprenants::all();
         return view('briefsassignement', compact('apprenants','id'));
     }
-
     
     public function AssignBrief($id,$id_apprenant){
         $apprennants = Apprenants::where('id',$id_apprenant)->first();
