@@ -28,8 +28,6 @@ class AssignController extends Controller
             $apprennants->brief()->attach($id);
             return redirect('/assigner/'. $id);
         }
-
-
     }
 
     public function DesAssignBrief($id,$id_apprenant){

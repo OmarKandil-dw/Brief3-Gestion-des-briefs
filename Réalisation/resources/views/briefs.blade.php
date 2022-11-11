@@ -75,7 +75,7 @@ a{
 <ul>
     <li><a href="/index" style="margin-top:2px;" class="a">Accueil </a></li>
     <li><a href="/addbrief" style="margin-top:2px;" class="a">Ajouter Brief</a></li>
-    <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:500px;margin-top:13px;"> </li>
+    {{-- <li><input type="text" name="search" id="search" placeholder="search" style="width:50%; margin-left:500px;margin-top:13px;"> </li> --}}
   </ul>
 
 
